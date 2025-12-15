@@ -6,7 +6,7 @@
 #    By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 13:33:20 by mtakiyos          #+#    #+#              #
-#    Updated: 2025/11/07 18:33:09 by mtakiyos         ###   ########.fr        #
+#    Updated: 2025/12/12 16:53:47 by mtakiyos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME	= libft.a
 INCLUDE = include/
 
 SRCS	= ft_atoi.c \
+	ft_atol.c \
 	ft_bzero.c \
 	ft_calloc.c \
 	ft_isalnum.c \

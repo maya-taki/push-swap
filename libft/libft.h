@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:42:57 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/11/07 18:34:31 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/12 16:54:09 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # endif
 
 int		ft_atoi(const char *nptr);
+long	ft_atol(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
