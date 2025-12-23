@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 03:39:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/10 15:20:23 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:10:54 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ typedef	struct		s_stack
 {
 	int				value;
 	int				index;
-	int				cost_a;
-	int				cost_b;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 	
