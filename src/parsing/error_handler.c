@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 18:08:39 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/23 18:32:26 by mtakiyos         ###   ########.fr       */
+/*   Created: 2025/12/23 18:21:41 by mtakiyos          #+#    #+#             */
+/*   Updated: 2025/12/23 18:32:56 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-
-
-	//if (t_stack->a <= 5)
+void	error_handler(void)
 {
-	
+	write(2, "Error/n", 6);
+	exit(1);
 }
-
-	
-
-char	**ft_sort_small_stack(int ac, char **av, int **size_str_numbers)
-{
-	
-}
-
-char	**ft_sort_big_stack(int ac, char **av, int **size_str_numbers)
-{
-
-}
-
-
-

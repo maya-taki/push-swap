@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 18:08:39 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/23 18:32:26 by mtakiyos         ###   ########.fr       */
+/*   Created: 2025/12/23 18:30:19 by mtakiyos          #+#    #+#             */
+/*   Updated: 2025/12/23 18:31:24 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-
-
-	//if (t_stack->a <= 5)
+void	ra(t_stack *stack)
 {
 	
 }
 
-	
-
-char	**ft_sort_small_stack(int ac, char **av, int **size_str_numbers)
+void	rb(t_stack *stack)
 {
 	
 }
 
-char	**ft_sort_big_stack(int ac, char **av, int **size_str_numbers)
+void	rr(t_stack *stack)
 {
-
+	
 }
-
-
-
