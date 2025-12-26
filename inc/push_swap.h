@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 03:39:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/23 18:23:45 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/26 15:37:26 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef	struct s_stack
 	int		*b;
 	int		size_a;
 	int		size_b;
+	struct	s_stack *next;
 }	t_stack;
 
 //move
@@ -47,3 +48,6 @@ void	error_exit(void);
 
 
 #endif
+
+
+ft_printf("pa\n");
