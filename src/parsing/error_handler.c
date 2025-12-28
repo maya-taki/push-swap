@@ -6,14 +6,14 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:21:41 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/23 18:32:56 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/28 15:32:46 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-void	error_handler(void)
+t_stack	*error_handler(void)
 {
-	write(2, "Error/n", 6);
-	exit(1);
+	ft_putstr_fd("Error/n", 2);
+	return (1);
 }
