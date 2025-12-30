@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_number.c                                     :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/24 18:43:17 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/24 18:52:09 by mtakiyos         ###   ########.fr       */
+/*   Created: 2025/12/29 16:54:21 by mtakiyos          #+#    #+#             */
+/*   Updated: 2025/12/29 17:46:11 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include  "../../inc/push_swap.h"
 
-int	ft_is_number(char *str)
+t_stack		*new_stack_node(int value)
 {
-	int	i;
-	
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-	{
-		if (str[i] == '+' || str[i] == '-')
-			i++;
-		if (!str[i])
-			return (0);
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+	t_stack	*node;
+
+	node = malloc(sizeof(t_stack));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->a = 0;
+	node->b = 0;
+	node->size_a = 0;
+	node->size_b = 0;
+	node->index = 0;
+	node->chunk_size = 0;
+	node->chunk_min = 0;
+	node->chunk_max = 0;
+	node->max_bits = 0;
+	node->next = NULL;
+	return (node);
 }
+
+7\\\\\\\\\.

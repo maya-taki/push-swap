@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:30:19 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/27 15:45:51 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/29 15:00:40 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void	rb(t_stack **stack_b)
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	if (rotate(stack_a) || rotate(stack_b))
+	if (rotate(stack_a) && rotate(stack_b))
 		ft_putstr_fd("rr\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:30:22 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/28 13:21:18 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/29 15:00:37 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	sb(t_stack **stack_b)
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	if (swap(stack_a) || swap(stack_b))
+	if (swap(stack_a) && swap(stack_b))
 		ft_putstr_fd("ss\n", 1);
 }

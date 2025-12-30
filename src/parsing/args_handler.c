@@ -6,16 +6,16 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:17:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/23 18:30:14 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/29 16:53:16 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int			ft_is_valid_number(char **str_numbers)
+int			is_valid_number(char **str_numbers)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	
 	i = 0;
 	while (str_numbers[i])
@@ -34,7 +34,7 @@ int			ft_is_valid_number(char **str_numbers)
 	return (1);
 }
 
-int			ft_is_dupe(char *str_numbers, int numbers_count)
+int			is_dupe(char *str_numbers, int numbers_count)
 {
 	int		i;
 	int		j;
@@ -57,31 +57,13 @@ int			ft_is_dupe(char *str_numbers, int numbers_count)
 	return (0);	
 }
 
-char 		*ft_parse_args(int ac, char **av, int *size_str_numbers)
+char 		**parse_args(int ac, char **av)
 {
 	char	**numbers;
-	char	*items;
-	int		counter;
 
-	counter = 0;
-	
-	if (ac < 2)
-		return (NULL);
 	if (ac == 2)
-	{
-		numbers = ft_split(av[1], ' ');
-		if (numbers == 0)
-			return (NULL);
-		items = 0;
-		while (numbers[counter])
-			counter++;
-		if (counter == 0)
-		{
-			free(numbers);
-			return (NULL);
-		}
-		size_str_numbers = ft_len_str_numbers(numbers);
-		free(numbers);
-	}
+		numbers = ft_split(ac - 1, ' ');
+	else
+		numbers = av + 1;
 	return (numbers);
 }
