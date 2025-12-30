@@ -6,16 +6,16 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:30:19 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/29 15:00:40 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:44:15 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static int rotate(t_stack **stack)
+static int	rotate(t_stack **stack)
 {
 	t_stack	*first;
-	t_stack *last;
+	t_stack	*last;
 
 	if (stack && *stack && (*stack)->next)
 	{

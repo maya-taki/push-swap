@@ -6,21 +6,21 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:30:22 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/29 15:00:37 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:43:42 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static int swap(t_stack **stack)
+static int	swap(t_stack **stack)
 {
 	t_stack	*tmp;
-	
+
 	if (*stack && (*stack)->next)
 	{
 		tmp = *stack;
 		*stack = (*stack)->next;
-		tmp->next = (*stack)->next;		
+		tmp->next = (*stack)->next;
 		(*stack)->next = tmp;
 	}
 }

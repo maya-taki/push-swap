@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 03:39:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 16:25:50 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:11:41 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void			*index_stack(t_stack *stack);
 
 
 t_stack			*error_handler(void);
+void			free_stack(t_stack **stack);
+void			free_str_numbers(char **s, size_t i);
 
 
 #endif

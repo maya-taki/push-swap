@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:22:10 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 16:36:51 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:46:52 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,41 @@ static int	*fill_numbers(int ac, char **av, int **int_numbers_size)
 	return (int_numbers);
 }
 
+int	push_swap(int *numbers, int numbers_count)
+{
+	t_stack	*stack;
+
+	stack = init_stack(numbers, numbers_count);
+	if (!stack)
+	{
+		free(numbers);
+		return (error_handler());
+	}
+	if (!is_sorted(stack))
+	{
+		if (stack->size_a <= 5)
+			simple_sort(stack);
+		else
+		{
+			normalize_stack(stack);
+			radix_sort(stack);
+		}
+	}
+	free(numbers);
+	free_stack(stack);
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
-	t_stack	*stack_a;
-	t_stack *stack_b;
+	int	*int_numbers;
+	int	*int_numbers_size;
 
-	int		num;
-
-	num = 0;	
 	if (ac == 1)
-		error_handler();
-	stack_a = NULL;
-	stack_b = NULL;
-	stack_a = init_stack(ac, av);
-	
-	if (ac == 2)
-		num = ft_atol(av[1]);
-	if (num > INT_MIN || num < INT_MAX)
-		error_handler();
+		return (0);
+	int_numbers_size = 0;
+	int_numbers = fill_numbers(ac, av, &int_numbers_size);
+	if (!int_numbers)
+		return (error_handler());
+	return (push_swap(int_numbers, &int_numbers_size));
 }

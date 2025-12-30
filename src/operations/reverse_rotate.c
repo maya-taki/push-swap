@@ -6,16 +6,16 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:31:50 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/29 15:00:39 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:44:05 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static int rrotate(t_stack **stack)
+static int	rrotate(t_stack **stack)
 {
 	t_stack	*first;
-	t_stack *last;
+	t_stack	*last;
 
 	if (stack && *stack && (*stack)->next)
 	{
@@ -41,8 +41,8 @@ void	rra(t_stack **stack_a)
 
 void	rrb(t_stack **stack_b)
 {
-		if (rrotate(stack_b))
-			ft_putstr_fd("rrb\n", 1);
+	if (rrotate(stack_b))
+		ft_putstr_fd("rrb\n", 1);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
