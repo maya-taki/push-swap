@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:21 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 17:17:43 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:47:16 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,15 +85,15 @@ void	assign_index(t_stack *stack, int *array, int size)
 
 void	*index_stack(t_stack *stack)
 {
-	int *array;
-	int size;
+	int	*array;
+	int	size;
 
 	size = stack_size(stack);
 	array = stack_to_array(stack, size);
 	if (!array)
-		return ;
+		return (NULL);
 	sort_array(array, size);
 	assign_index(stack, array, size);
-
 	free(array);
+	return (array);
 }

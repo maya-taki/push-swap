@@ -6,13 +6,13 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:22:10 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 17:46:52 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:46:02 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static int	*fill_numbers(int ac, char **av, int **int_numbers_size)
+static int	*fill_numbers(int ac, char **av, int *int_numbers_size)
 {
 	char	**str_numbers;
 	int		*int_numbers;
@@ -26,8 +26,11 @@ static int	*fill_numbers(int ac, char **av, int **int_numbers_size)
 		str_numbers = parse_args(ac, av, &size_str_numbers);
 	if (!str_numbers)
 		return (NULL);
-	if (!is_valid_number)
+	if (!is_valid_number(str_numbers))
 		return (NULL);
+	// Checar INT_MIN e INT_MAX na tranformação do char ** para int *
+	// e criar a conversão de char ** str_numbers para int * int_numbers
+	// int_numbers = str_numbers_to_int();
 	free_str_numbers(str_numbers, size_str_numbers);
 	*int_numbers_size = size_str_numbers;
 	return (int_numbers);
@@ -35,33 +38,44 @@ static int	*fill_numbers(int ac, char **av, int **int_numbers_size)
 
 int	push_swap(int *numbers, int numbers_count)
 {
-	t_stack	*stack;
+	t_stack	*stack_a;
+	t_stack *stack_b;
 
-	stack = init_stack(numbers, numbers_count);
-	if (!stack)
+	stack_a = init_stack(numbers, numbers_count);
+	if (!stack_a)
 	{
 		free(numbers);
 		return (error_handler());
 	}
-	if (!is_sorted(stack))
+	stack_b = init_stack(NULL, 0);
+	if (!stack_b)
 	{
-		if (stack->size_a <= 5)
-			simple_sort(stack);
+		free(numbers);
+		free_stack(&stack_a);
+		return (error_handler());
+	}
+	/*
+	if (!is_sorted(stack_a))
+	{
+		if (stack_a->size_a <= 5)
+			simple_sort(stack_a);
 		else
 		{
-			normalize_stack(stack);
-			radix_sort(stack);
+			index_stack(stack_a);
+			radix_sort(stack_a, stack_b);
 		}
 	}
+	*/
 	free(numbers);
-	free_stack(stack);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
 
 int	main(int ac, char **av)
 {
 	int	*int_numbers;
-	int	*int_numbers_size;
+	int	int_numbers_size;
 
 	if (ac == 1)
 		return (0);
@@ -69,5 +83,5 @@ int	main(int ac, char **av)
 	int_numbers = fill_numbers(ac, av, &int_numbers_size);
 	if (!int_numbers)
 		return (error_handler());
-	return (push_swap(int_numbers, &int_numbers_size));
+	return (push_swap(int_numbers, int_numbers_size));
 }

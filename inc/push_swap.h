@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 03:39:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 17:11:41 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:52:03 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,11 @@
 
 typedef	struct s_stack
 {
-	int			*a;
-	int			*b;
-
 	int				size_a;
 	int				size_b;
 
 	long			value;
 	int 			index;
-
-	int				chunk_size;
-	int				chunk_min;
-	int				chunk_max;
 
 	int				max_bits;
 	struct	s_stack *next;
@@ -63,12 +56,12 @@ void			ss(t_stack **stack_a, t_stack **stack_b);
 
 
 int				is_valid_number(char **str_numbers);
-int				is_dupe(char *str_numbers, int numbers_count);
+int				is_dupe(int *int_numbers, int numbers_count);
 char 			**parse_args(int ac, char **av, int *size_str_numbers);
 char 			**parse_str_args(int ac, char **av, int *size_str_numbers);
 
 static	t_stack	*build_stack(char **numbers);
-t_stack			*init_stack(int ac, char **av);
+t_stack			*init_stack(int *numbers, int count);
 
 
 t_stack			*new_stack_node(int value);
@@ -79,9 +72,9 @@ void			assign_index(t_stack *stack, int *array, int size);
 void			*index_stack(t_stack *stack);
 
 
-t_stack			*error_handler(void);
-void			free_stack(t_stack **stack);
-void			free_str_numbers(char **s, size_t i);
+int				error_handler(void);
+void			*free_stack(t_stack **stack);
+void			*free_str_numbers(char **s, size_t i);
 
 
 #endif

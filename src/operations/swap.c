@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:30:22 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 17:43:42 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:48:01 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ static int	swap(t_stack **stack)
 		*stack = (*stack)->next;
 		tmp->next = (*stack)->next;
 		(*stack)->next = tmp;
+		return (1);
 	}
+	return (0);
 }
 
 void	sa(t_stack **stack_a)

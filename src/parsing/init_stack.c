@@ -6,50 +6,58 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 13:52:57 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 11:54:33 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:52:25 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static	t_stack	*alloc_stack(int numbers_count)
+t_stack	*init_stack(int *numbers, int count)
 {
-	t_stack	*stack;
-	
-	stack = malloc(sizeof(t_stack));
-	if (!stack)
-		return (NULL);
-	stack->a = malloc(sizeof(int) * numbers_count);
-	if (!stack->a)
-	{
-		free(stack);
-		return (NULL);
-	}
-	stack->b = malloc(sizeof(int) * numbers_count);
-	if (!stack->b)
-	{
-		free(stack->a);
-		free(stack);
-		return (NULL);
-	}
-	return (stack);
-}
+	t_stack	*head;
+	t_stack	*node;
+	t_stack	*new;
+	int		i;
 
-t_stack	*init_stack(int *numbers, int numbers_count)
-{
-	t_stack	*stack;
-	int i;
-	
-	stack = alloc_stack(numbers_count);
-	if (!stack)
+	head = malloc(sizeof(t_stack));
+	if (!head)
 		return (NULL);
+	head->size_a = count;
+	head->size_b = 0;
+	head->max_bits = 0;
+	head->next = NULL;
+	node = head;
 	i = 0;
-	while (i < numbers_count)
+	while (i < count)
 	{
-		stack->a[i] = numbers[i];
+		// colocar tudo isso em uma função separada
+		// começa aqui não esquecer de mover as variaveis também
+		new = malloc(sizeof(t_stack));
+		if (!new)
+			return (free_stack(&head));
+		new->value = numbers[i];
+		new->index = -1;
+		new->next = NULL;
+		node->next = new;
+		node = new;
+		// termina aqui
 		i++;
 	}
-	stack->size_a = numbers_count;
-	stack->size_b = 0;
-	return (stack);
+	return (head);
+}
+
+void	*free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack)
+		return (NULL);
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
+	return (NULL);
 }

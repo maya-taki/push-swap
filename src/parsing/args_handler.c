@@ -6,24 +6,33 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:17:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/30 17:12:07 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:51:15 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+static int str_numbers_size(char **str_numbers)
+{
+	int	i;
+
+	i = 0;
+	while (str_numbers[i])
+		i++;
+	return (i);
+}
+
 char 		**parse_str_args(int ac, char **av, int *size_str_numbers)
 {
-	
 	char	**str_numbers;
-	
-	
-	str_numbers = ft_split(ac - 1, ' ');
+
+	str_numbers = ft_split(av[ac - 1], ' ');
 	if (str_numbers[0] == NULL)
+	{
 		free(str_numbers);
-		return (NULL);
-	
-	*size_str_numbers = is_valid_number(str_numbers);
+		return (0);
+	}
+	*size_str_numbers = str_numbers_size(str_numbers);
 	return (str_numbers);
 }
 
@@ -44,7 +53,6 @@ char		**parse_args(int ac, char **av, int *size_str_numbers)
 		i++;
 	}
 	str_numbers[i - 1] = NULL;
-	*size_str_numbers = is_valid_number(str_numbers);
+	*size_str_numbers = str_numbers_size(str_numbers);
 	return (str_numbers);
-	
 }
