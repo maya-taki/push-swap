@@ -6,16 +6,16 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:21 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/02 16:47:16 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 18:16:49 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 int	stack_size(t_stack *stack)
 {
 	int	i;
-	
+
 	i = 0;
 	while (stack)
 	{

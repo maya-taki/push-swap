@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:36:55 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/11/07 18:18:18 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:35:46 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*read_fd(char *stash, int fd)
 		return (NULL);
 	bytes_read = 1;
 	while (bytes_read > 0)
-	{	
+	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
 			return (free_all(stash, buffer));

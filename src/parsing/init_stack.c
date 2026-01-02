@@ -6,18 +6,38 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 13:52:57 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/02 16:52:25 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:36:42 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+void	advance_stack(int *numbers, int count)
+{
+	t_stack	*head;
+	t_stack	*new;
+	t_stack	*node;
+	int		i;
+
+	i = 0;
+	while (i < count)
+	{
+		new = malloc(sizeof(t_stack));
+		if (!new)
+			return (free_stack(&head));
+		new->value = numbers[i];
+		new->index = -1;
+		new->next = NULL;
+		node->next = new;
+		node = new;
+		i++;
+	}
+}
+
 t_stack	*init_stack(int *numbers, int count)
 {
 	t_stack	*head;
 	t_stack	*node;
-	t_stack	*new;
-	int		i;
 
 	head = malloc(sizeof(t_stack));
 	if (!head)
@@ -27,22 +47,7 @@ t_stack	*init_stack(int *numbers, int count)
 	head->max_bits = 0;
 	head->next = NULL;
 	node = head;
-	i = 0;
-	while (i < count)
-	{
-		// colocar tudo isso em uma função separada
-		// começa aqui não esquecer de mover as variaveis também
-		new = malloc(sizeof(t_stack));
-		if (!new)
-			return (free_stack(&head));
-		new->value = numbers[i];
-		new->index = -1;
-		new->next = NULL;
-		node->next = new;
-		node = new;
-		// termina aqui
-		i++;
-	}
+	advance_stack(numbers, count);
 	return (head);
 }
 

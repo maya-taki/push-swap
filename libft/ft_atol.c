@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:01:49 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/12/10 11:20:52 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:35:58 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atol(const char *nptr)
 {
 	long	res;
 	int		sign;
-		
+
 	sign = 0;
 	while (*nptr)
 	{

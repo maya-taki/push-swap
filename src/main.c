@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:22:10 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/02 16:46:02 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:29:30 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ static int	*fill_numbers(int ac, char **av, int *int_numbers_size)
 	char	**str_numbers;
 	int		*int_numbers;
 	int		size_str_numbers;
+	long	tmp_val;
 
 	str_numbers = NULL;
+	int_numbers = NULL;
 	size_str_numbers = 0;
 	if (ac == 2)
 		str_numbers = parse_str_args(ac, av, &size_str_numbers);
@@ -28,7 +30,16 @@ static int	*fill_numbers(int ac, char **av, int *int_numbers_size)
 		return (NULL);
 	if (!is_valid_number(str_numbers))
 		return (NULL);
-	// Checar INT_MIN e INT_MAX na tranformação do char ** para int *
+	tmp_val = ft_atol(str_numbers[i]);
+	if (tmp_val < INT_MIN || tmp_val > INT_MAX)
+	{
+		free(int_numbers);
+		return (NULL);
+	}
+	int_numbers[i] = tmp_val;
+	if (is_dupe(tmp_val, &size_str_numbers))
+		return (NULL);
+	// TODO: Checar INT_MIN e INT_MAX na tranformação do char ** para int *
 	// e criar a conversão de char ** str_numbers para int * int_numbers
 	// int_numbers = str_numbers_to_int();
 	free_str_numbers(str_numbers, size_str_numbers);
@@ -39,7 +50,7 @@ static int	*fill_numbers(int ac, char **av, int *int_numbers_size)
 int	push_swap(int *numbers, int numbers_count)
 {
 	t_stack	*stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_b;
 
 	stack_a = init_stack(numbers, numbers_count);
 	if (!stack_a)
@@ -54,6 +65,7 @@ int	push_swap(int *numbers, int numbers_count)
 		free_stack(&stack_a);
 		return (error_handler());
 	}
+	// TODO: fazer o is_sorted descomentar apenas se sorting estiver completo
 	/*
 	if (!is_sorted(stack_a))
 	{

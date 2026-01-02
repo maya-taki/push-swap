@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:21:41 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/02 16:49:36 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:36:39 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	error_handler(void)
 {
-	ft_putstr_fd("Error/n", 2);
+	ft_putstr_fd("Error\n", 2);
 	return (1);
 }
 

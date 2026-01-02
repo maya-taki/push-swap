@@ -6,7 +6,7 @@
 #    By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/10 03:37:57 by mtakiyos          #+#    #+#              #
-#    Updated: 2026/01/02 18:06:44 by mtakiyos         ###   ########.fr        #
+#    Updated: 2026/01/02 18:23:36 by mtakiyos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT_DIR   := libft
 LIBFT       := $(LIBFT_DIR)/libft.a
 LIBFT_FLAGS := -L$(LIBFT_DIR) -lft
 
-INCLUDE_DIRS := includes $(LIBFT_DIR)
+INCLUDE_DIRS := inc $(LIBFT_DIR)
 INCLUDES     := $(foreach dir,$(INCLUDE_DIRS),-I$(dir))
 SRC_DIRS	= src
 OBJ_DIR		= build
@@ -33,6 +33,11 @@ END			= \033[0m
 
 SRCS		= $(shell find $(SRC_DIRS) -name "*.c")
 OBJS		= $(patsubst %.c,$(OBJ_DIR)/%.o,$(SRCS))
+
+DEBUG ?= 0
+ifeq ($(DEBUG), 1)
+	FLAGS += -g2 -O0
+endif
 
 # Rules
 all: $(NAME)

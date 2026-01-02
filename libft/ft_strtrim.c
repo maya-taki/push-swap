@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 21:22:21 by mtakiyos          #+#    #+#             */
-/*   Updated: 2025/08/05 20:59:50 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:35:18 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (*set == '\0')
 		return (ft_strdup(s1));
 	while (ft_is_set(set, *start))
-			start++;
+		start++;
 	if (*start == '\0')
 		return (ft_substr(s1, 0, 0));
 	while (end > start && ft_is_set(set, *end))
