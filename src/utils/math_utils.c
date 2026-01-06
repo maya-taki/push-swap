@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 16:59:35 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/05 17:46:11 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 01:54:10 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	find_max(t_stack *stack)
 			max_index = stack->next->index;
 		stack = stack->next;
 	}
+	return (max_index);
 }
 
 int	find_min(t_stack *stack)
@@ -38,3 +39,4 @@ int	find_min(t_stack *stack)
 	}
 	return (min_index);
 }
+

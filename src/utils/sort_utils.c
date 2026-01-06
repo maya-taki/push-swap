@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:37:46 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/05 17:43:06 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 01:54:11 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,27 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
+void	bring_to_top(t_stack  **stack)
+{
+	t_stack	*tmp;
+	int		stack_len;
+	int		min_index;
+	int		count;
 
-int		find_max(t_stack **stack);
-
-void    bring_to_top(t_stack **stack);
+	stack_len = stack_size(*stack);
+	min_index = find_min(*stack);
+	tmp = *stack;
+	count = 0;
+	while (tmp->index != min_index)
+	{
+		tmp = tmp->next;
+		count++;
+	}
+	while ((*stack)->index != min_index)
+	{
+		if (count > (stack_len / 2))
+			rra(stack);
+		else
+			ra(stack);
+	}
+}

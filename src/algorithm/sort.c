@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:08:39 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/05 16:20:16 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 01:54:13 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,6 @@ static void	sort_three(t_stack **stack)
 		sa(stack);
 }
 
-int		find_max(t_stack **stack);
-
-int		is_sorted(t_stack *stack);
-
-void    bring_to_top(t_stack **stack);
-
 static void	sort_four(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a && *stack_a && (*stack_a)->next)
@@ -66,7 +60,7 @@ static void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	if (stack_a && *stack_a && (*stack_a)->next)
 	{
 		bring_to_top(stack_a);
-		pb(stack_a, stack_b)
+		pb(stack_a, stack_b);
 		bring_to_top(stack_a);
 		pb(stack_a, stack_b);
 		sort_three(stack_a);
@@ -76,7 +70,7 @@ static void	sort_five(t_stack **stack_a, t_stack **stack_b)
 }
 void	sort_small(t_stack **stack_a, t_stack **stack _b)
 {
-	if (->)
+
 }
 
 void	radix_sort(t_stack *a)
