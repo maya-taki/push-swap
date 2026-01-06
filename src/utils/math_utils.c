@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 16:59:35 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 01:54:10 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:00:37 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	find_min(t_stack *stack)
 	while (stack)
 	{
 		if (min_index > stack->index)
-			min_index == stack->index;
+			min_index = stack->index;
 		stack = stack->next;
 	}
 	return (min_index);

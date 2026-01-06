@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 03:39:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/02 19:34:43 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:58:25 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,24 @@ void			*index_stack(t_stack *stack);
 int				error_handler(void);
 void			*free_stack(t_stack **stack);
 void			*free_str_numbers(char **s, size_t i);
+
+//sorting
+static void		sort_two(t_stack **stack_a);
+static void		sort_three(t_stack **stack);
+static void		sort_four(t_stack **stack_a, t_stack **stack_b);
+static void		sort_five(t_stack **stack_a, t_stack **stack_b);
+void			sort_small(t_stack **stack_a, t_stack **stack_b);
+
+
+int				find_max(t_stack *stack);
+int				find_min(t_stack *stack);
+
+
+int				is_sorted(t_stack *stack);
+void			bring_to_top(t_stack **stack);
+
+
+void			radix_sort(t_stack *stack_a, t_stack *stack_b);
+
 
 #endif

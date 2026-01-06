@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:22:10 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/02 20:35:39 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:00:15 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	*fill_numbers(int ac, char **av, int *int_numbers_size)
 		int_numbers[i] = tmp_value;
 		i++;
 	}
-	if (is_dupe(int_numbers, &size_str_numbers))
+	if (is_dupe(int_numbers, size_str_numbers))
 	{
 		free(int_numbers);
 		return (NULL);
@@ -71,19 +71,16 @@ int	push_swap(int *numbers, int numbers_count)
 		free_stack(&stack_a);
 		return (error_handler());
 	}
-	// TODO: fazer o is_sorted descomentar apenas se sorting estiver completo
-	/*
 	if (!is_sorted(stack_a))
 	{
 		if (stack_a->size_a <= 5)
-			simple_sort(stack_a);
+			sort_small(&stack_a, &stack_b);
 		else
 		{
 			index_stack(stack_a);
 			radix_sort(stack_a, stack_b);
 		}
 	}
-	*/
 	free(numbers);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
