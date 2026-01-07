@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:01:49 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/02 19:35:58 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 17:17:13 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ long	ft_atol(const char *nptr)
 {
 	long	res;
 	int		sign;
+	int		i;
 
-	sign = 0;
-	while (*nptr)
+	i = 0;
+	sign = 1;
+	res = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if ((*nptr >= 9 || *nptr <= 13) && *nptr == 32)
-			nptr++;
-		if (*nptr == '+' || *nptr == '-')
-		{
-			if (*nptr == '-')
-				sign = -1;
-			nptr++;
-		}
-		if (*nptr >= '0' && *nptr <= '9')
-		{
-			res = res * 10 + (*nptr - '0');
-			nptr++;
-		}
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (sign * res);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = res * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (res * sign);
 }

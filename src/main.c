@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:22:10 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 15:00:15 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:31:47 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int	*fill_numbers(int ac, char **av, int *int_numbers_size)
 		return (NULL);
 	if (!is_valid_number(str_numbers))
 		return (NULL);
+	int_numbers = ft_calloc(size_str_numbers + 1, sizeof(int));
 	while (i < size_str_numbers)
 	{
 		tmp_value = ft_atol(str_numbers[i]);
@@ -53,6 +54,15 @@ static int	*fill_numbers(int ac, char **av, int *int_numbers_size)
 	return (int_numbers);
 }
 
+void	print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		//printf("%ld\n", stack->value);
+		stack = stack->next;
+	}
+}
+
 int	push_swap(int *numbers, int numbers_count)
 {
 	t_stack	*stack_a;
@@ -64,13 +74,14 @@ int	push_swap(int *numbers, int numbers_count)
 		free(numbers);
 		return (error_handler());
 	}
-	stack_b = init_stack(NULL, 0);
-	if (!stack_b)
-	{
-		free(numbers);
-		free_stack(&stack_a);
-		return (error_handler());
-	}
+	stack_b = NULL;
+	// if (!stack_b)
+	// {
+	// 	free(numbers);
+	// 	free_stack(stack_a);
+	// 	return (error_handler());
+	// }
+	print_stack(stack_a);
 	if (!is_sorted(stack_a))
 	{
 		if (stack_a->size_a <= 5)
@@ -82,8 +93,8 @@ int	push_swap(int *numbers, int numbers_count)
 		}
 	}
 	free(numbers);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }
 

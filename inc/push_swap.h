@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 03:39:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 14:58:25 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:06:24 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void			assign_index(t_stack *stack, int *array, int size);
 void			*index_stack(t_stack *stack);
 
 int				error_handler(void);
-void			*free_stack(t_stack **stack);
+void			free_stack(t_stack *stack);
 void			*free_str_numbers(char **s, size_t i);
 
 //sorting

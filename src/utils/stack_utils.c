@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:21 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 01:54:12 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:53:30 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	stack_size(t_stack *stack)
 	int	i;
 
 	i = 0;
-	while (stack)
+	while (stack && stack->next)
 	{
 		stack = stack->next;
 		i++;
 	}
-	return (i);
+	return (i + 1);
 }
 
 int	*stack_to_array(t_stack *stack, int size)

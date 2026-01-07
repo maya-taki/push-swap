@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 13:52:57 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 15:01:19 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:39:00 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,15 @@ void	add_stack(t_stack *head, int *numbers, int count)
 
 	i = 0;
 	node = head;
+	node->value = numbers[i];
+	node->index = -1;
+	i++;
 	while (i < count)
 	{
 		new = malloc(sizeof(t_stack));
 		if (!new)
 		{
-			free_stack(&head);
+			free_stack(head);
 			break ;
 		}
 		new->value = numbers[i];
@@ -52,18 +55,17 @@ t_stack	*init_stack(int *numbers, int count)
 	return (head);
 }
 
-void	*free_stack(t_stack **stack)
+void	free_stack(t_stack *stack)
 {
 	t_stack	*tmp;
 
 	if (!stack)
-		return (NULL);
-	while (*stack)
+		return ;
+	while (stack)
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
 	}
-	*stack = NULL;
-	return (NULL);
+	stack = NULL;
 }

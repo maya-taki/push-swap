@@ -6,7 +6,7 @@
 #    By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 13:33:20 by mtakiyos          #+#    #+#              #
-#    Updated: 2025/12/12 16:53:47 by mtakiyos         ###   ########.fr        #
+#    Updated: 2026/01/06 19:50:45 by mtakiyos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,8 +63,12 @@ OBJS =	$(SRCS:.c=.o)
 
 RM = rm -f
 
-# colors #
+DEBUG ?= 0
+ifeq ($(DEBUG), 1)
+	FLAGS += -g2 -O0
+endif
 
+# colors #
 END = \033[0m
 RED = \033[31m
 GREEN = \033[32m

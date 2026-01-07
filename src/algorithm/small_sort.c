@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:08:39 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 13:24:16 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:52:44 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	sort_small(t_stack **stack_a, t_stack **stack_b)
 	int	stack_len;
 
 	stack_len = stack_size(*stack_a);
+	printf("%d", stack_len);
 	if (stack_len == 2)
 		sort_two(stack_a);
 	else if (stack_len == 3)

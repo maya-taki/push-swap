@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:37:46 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 14:55:24 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:55:58 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	is_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (1);
-	while (stack->next)
+	while (stack && stack->next)
 	{
-		if (stack->index > stack->next->index)
+		if (stack->value > stack->next->value)
 			return (0);
 		stack = stack->next;
 	}

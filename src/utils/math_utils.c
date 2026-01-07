@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 16:59:35 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 15:00:37 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:57:53 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	find_max(t_stack *stack)
 	int	max_index;
 
 	max_index = stack->index;
-	while (stack)
+	while (stack && stack->next)
 	{
 		if (max_index < stack->next->index)
 			max_index = stack->next->index;
@@ -31,7 +31,7 @@ int	find_min(t_stack *stack)
 	int	min_index;
 
 	min_index = stack->index;
-	while (stack)
+	while (stack && stack->next)
 	{
 		if (min_index > stack->index)
 			min_index = stack->index;
