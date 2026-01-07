@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:37:46 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 20:55:58 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 19:04:21 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ void	bring_to_top(t_stack **stack)
 	min_index = find_min(*stack);
 	tmp = *stack;
 	count = 0;
-	while (tmp->index != min_index)
+	while (tmp->value != min_index)
 	{
 		tmp = tmp->next;
 		count++;
 	}
-	while ((*stack)->index != min_index)
+	//printf("%d\n", min_index);
+	while ((*stack)->value != min_index)
 	{
 		if (count > (stack_len / 2))
 			rra(stack);

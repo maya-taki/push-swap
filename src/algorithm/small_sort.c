@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:08:39 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/07 13:52:44 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 18:58:08 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	sort_two(t_stack **stack_a)
 {
 	if (stack_a && *stack_a && (*stack_a)->next)
 	{
-		if ((*stack_a)->index > (*stack_a)->next->index)
+		if ((*stack_a)->value > (*stack_a)->next->value)
 			sa(stack_a);
 	}
 }
@@ -33,19 +33,21 @@ static void	sort_three(t_stack **stack)
 		return ;
 	max_index = find_max(*stack);
 	count = 0;
-	if ((*stack)->index == max_index)
+	if ((*stack)->value == max_index)
 		ra(stack);
-	else if ((*stack)->next->index == max_index)
+	if ((*stack)->next->value == max_index)
 		rra(stack);
-	else if (!is_sorted(*stack))
+	if (!is_sorted(*stack))
 		sa(stack);
 }
 
 static void	sort_four(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a && *stack_a && (*stack_a)->next)
-	{
+	{	
 		bring_to_top(stack_a);
+		if (is_sorted(*stack_a))
+			return ;
 		pb(stack_a, stack_b);
 		sort_three(stack_a);
 		pa(stack_a, stack_b);
@@ -71,7 +73,7 @@ void	sort_small(t_stack **stack_a, t_stack **stack_b)
 	int	stack_len;
 
 	stack_len = stack_size(*stack_a);
-	printf("%d", stack_len);
+	// printf("%d", stack_len);
 	if (stack_len == 2)
 		sort_two(stack_a);
 	else if (stack_len == 3)

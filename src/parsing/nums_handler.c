@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 17:12:25 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/07 14:24:06 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 18:35:13 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ int	is_valid_number(char **str_numbers)
 		j = 0;
 		if (str_numbers[i][j] == '+' || str_numbers[i][j] == '-')
 			j++;
-		if (!str_numbers[i][j])
+		if (!(str_numbers[i][j]))
 			return (0);
-		if (str_numbers[i][j] >= '0' && str_numbers[i][j] <= '9')
+		while (str_numbers[i][j])
+		{
+			if (str_numbers[i][j] < '0' || str_numbers[i][j] > '9')
+				return (0);
 			j++;
-		else
-			return (0);
-		i++;
+		}
+		i++;	
 	}
 	return (1);
 }
