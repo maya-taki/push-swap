@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:22:10 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/07 13:31:47 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 21:29:02 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		//printf("%ld\n", stack->value);
 		stack = stack->next;
 	}
 }
@@ -75,12 +74,6 @@ int	push_swap(int *numbers, int numbers_count)
 		return (error_handler());
 	}
 	stack_b = NULL;
-	// if (!stack_b)
-	// {
-	// 	free(numbers);
-	// 	free_stack(stack_a);
-	// 	return (error_handler());
-	// }
 	print_stack(stack_a);
 	if (!is_sorted(stack_a))
 	{
@@ -89,7 +82,7 @@ int	push_swap(int *numbers, int numbers_count)
 		else
 		{
 			index_stack(stack_a);
-			radix_sort(stack_a, stack_b);
+			radix_sort(&stack_a, &stack_b);
 		}
 	}
 	free(numbers);

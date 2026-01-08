@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 17:12:25 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/07 18:35:13 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 20:37:14 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	is_valid_number(char **str_numbers)
 				return (0);
 			j++;
 		}
-		i++;	
+		i++;
 	}
 	return (1);
 }

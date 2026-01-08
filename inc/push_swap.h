@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 03:39:27 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/06 20:06:24 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/07 21:24:55 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int				is_sorted(t_stack *stack);
 void			bring_to_top(t_stack **stack);
 
 
-void			radix_sort(t_stack *stack_a, t_stack *stack_b);
+void			radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 
 #endif
