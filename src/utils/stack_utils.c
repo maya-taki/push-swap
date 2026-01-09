@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:21 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/07 13:53:30 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/09 17:39:47 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	stack_size(t_stack *stack)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (stack && stack->next)
@@ -27,16 +27,20 @@ int	stack_size(t_stack *stack)
 
 int	*stack_to_array(t_stack *stack, int size)
 {
-	int	*array;
-	int	i;
+	t_stack	*node;
+	int		*array;
+	int		i;
 
+	i = 0;
 	array = malloc(sizeof(int) * size);
 	if (!array)
 		return (NULL);
-	while (stack)
+	node = stack;
+	while (node)
 	{
-		array[i] = stack->value;
-		stack = stack->next;
+		array[i] = node->value;
+		node = node->next;
+		i++;
 	}
 	return (array);
 }
@@ -44,29 +48,32 @@ int	*stack_to_array(t_stack *stack, int size)
 void	sort_array(int *array, int size)
 {
 	int	i;
+	int	j;
 	int	tmp;
-
-	while (size > 0)
+	
+	j = 0;
+	while (j < size)
 	{
 		i = 0;
 		while (i < size)
 		{
-			if (array[i] > array[i + 1])
+			if (array[i] > array[j])
 			{
 				tmp = array[i];
-				array[i] = array[i + 1];
-				array[i + 1] = tmp;
+				array[i] = array[j];
+				array[j] = tmp;
 			}
 			i++;
 		}
-		size--;
+		j++;
 	}
 }
 
 void	assign_index(t_stack *stack, int *array, int size)
 {
 	int	i;
-
+		
+	i = 0;
 	while (stack)
 	{
 		i = 0;
@@ -83,7 +90,7 @@ void	assign_index(t_stack *stack, int *array, int size)
 	}
 }
 
-void	*index_stack(t_stack *stack)
+void	*normalize_stack(t_stack *stack)
 {
 	int	*array;
 	int	size;

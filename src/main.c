@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:22:10 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/07 21:29:02 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/09 17:13:15 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	push_swap(int *numbers, int numbers_count)
 			sort_small(&stack_a, &stack_b);
 		else
 		{
-			index_stack(stack_a);
+			normalize_stack(stack_a);
 			radix_sort(&stack_a, &stack_b);
 		}
 	}

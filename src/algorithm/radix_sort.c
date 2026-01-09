@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 13:13:52 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/07 21:28:36 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/09 17:54:42 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //TODO: Fazer sort radix
 
-int	get_max_bits(int max_index)
+static int	get_max_bits(int max_index)
 {
 	int max_bits;
 
@@ -27,14 +27,12 @@ int	get_max_bits(int max_index)
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int		size;
-	int		max_index;
 	int		max_bits;
 	int		i;
 	int		j;
 
+	max_bits = get_max_bits(stack_size((*stack_a)) - 1);
 	size = stack_size(*stack_a);
-	max_index = size - 1;
-	max_bits = get_max_bits(max_index);
 	i = 0;
 	while (i < max_bits)
 	{
@@ -47,7 +45,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 				ra(stack_a);
 			j++;
 		}
-		while ((*stack_a)->size_b > 0)
+		while (*stack_b)
 			pa(stack_a, stack_b);
 		i++;
 	}
