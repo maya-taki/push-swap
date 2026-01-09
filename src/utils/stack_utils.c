@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:54:21 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/09 17:39:47 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/09 18:37:10 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_array(int *array, int size)
 	int	i;
 	int	j;
 	int	tmp;
-	
+
 	j = 0;
 	while (j < size)
 	{
@@ -72,7 +72,7 @@ void	sort_array(int *array, int size)
 void	assign_index(t_stack *stack, int *array, int size)
 {
 	int	i;
-		
+
 	i = 0;
 	while (stack)
 	{

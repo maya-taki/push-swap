@@ -6,7 +6,7 @@
 /*   By: mtakiyos <mtakiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 13:13:52 by mtakiyos          #+#    #+#             */
-/*   Updated: 2026/01/09 17:54:42 by mtakiyos         ###   ########.fr       */
+/*   Updated: 2026/01/09 18:36:46 by mtakiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 static int	get_max_bits(int max_index)
 {
-	int max_bits;
+	int		max_bits;
 
 	max_bits = 0;
-	while ((max_index >> max_bits) != 0)	
+	while ((max_index >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
 }
